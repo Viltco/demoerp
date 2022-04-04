@@ -1,0 +1,26 @@
+<odoo>
+
+    <template id="invoice_report_template_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='qrcode']" position="after">
+            <t t-if="o.move_type == 'out_invoice'">
+                <div id="information" class="row mt32 mb32">
+                    <div class="col-auto col-3 mw-100 mb-2" >
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <span>VILTCO TECHNOLOGIES</span><br/>
+                        <span>Bank: BANK ALFALAH</span><br/>
+                        <span>Account # : 5508-5001219148</span><br/>
+                        <span>Branch Code: 5508</span><br/>
+                        <span>IBAN#: PK26ALFH5508005001219148</span><br/>
+                        <span>Swift Code: ALFHPKKAXXX</span><br/>
+                        <span>Branch : IBD Garden Town, Lahore Branch</span><br/>
+                        <span>Address: 23-Ali Block New Garden Town Lahore Pakistan.</span><br/>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

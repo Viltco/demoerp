@@ -1,0 +1,15 @@
+<odoo>
+
+    <record id="action_server_bill_hours" model="ir.actions.server">
+        <field name="name">Fill Billing Hours</field>
+        <field name="sequence">1</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_project_task"/>
+        <field name="binding_model_id" ref="model_project_task"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records: action = records.fill_billed_hours()
+        </field>
+    </record>
+
+</odoo>

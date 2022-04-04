@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="overhead_cost_tree" model="ir.ui.view">
+        <field name="name">overhead.cost.tree</field>
+        <field name="model">overhead.cost</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="overhead_cost"/>
+            </tree>
+        </field>
+    </record>
+    <record id="overhead_cost_form" model="ir.ui.view">
+        <field name="name">overhead.cost.form</field>
+        <field name="model">overhead.cost</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="overhead_cost"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="Overhead_cost_action" model="ir.actions.act_window">
+        <field name="name">Overhead Cost</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">overhead.cost</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create Overhead Cost!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="overhead_cost_root"
+              name="Overhead Cost"
+              parent="hr.menu_human_resources_configuration"
+              action="Overhead_cost_action"/>
+
+
+
+    <record id="working_hour_tree" model="ir.ui.view">
+        <field name="name">working.hour.tree</field>
+        <field name="model">working.hour</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="working_hour"/>
+                <field name="month"/>
+            </tree>
+        </field>
+    </record>
+    <record id="working_hour_form" model="ir.ui.view">
+        <field name="name">working.hour.form</field>
+        <field name="model">working.hour</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="working_hour"/>
+                        <field name="month"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="working_hour_action" model="ir.actions.act_window">
+        <field name="name">Working Hours</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">working.hour</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create Working Hours!
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="working_hour_root"
+              name="Working Hours"
+              parent="hr.menu_human_resources_configuration"
+              action="working_hour_action"/>
+
+</odoo>

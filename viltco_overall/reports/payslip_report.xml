@@ -1,0 +1,11 @@
+<odoo>
+
+    <report id="payslip_report"
+            model="hr.payslip"
+            string="Payslip"
+            report_type="qweb-pdf"
+            name="viltco_overall.purchase_template"
+            file="viltco_overall.purchase_template"
+    />
+
+</odoo>

@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+
+    <record id="account_analytic_line_tree_inh" model="ir.ui.view">
+      <field name="name">account.analytic.line.inh</field>
+      <field name="model">account.analytic.line</field>
+      <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+      <field name="arch" type="xml">
+
+            <xpath expr="//tree" position="inside">
+                <header>
+                    <button string="Compute" name="action_compute_cost" type="object" class="oe_highlight"/>
+                </header>
+            </xpath>
+
+        <xpath expr="//field[@name='unit_amount']" position="before">
+          <field name="total_cost"/>
+          <field name="planned_hours"/>
+          <field name="billed_hours"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>
