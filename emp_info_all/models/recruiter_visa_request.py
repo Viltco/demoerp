@@ -46,10 +46,13 @@ class RecruiterVisaRequest(models.Model):
     description = fields.Text(string='Description')
 
     state = fields.Selection(
-        [('tosubmit', 'ToSubmit'), ('confirm', 'Confirm') ],
+        [('tosubmit', 'ToSubmit'), ('confirm', 'Confirm'),('reject', 'Rejected') ],
         default='tosubmit')
 
     def action_submit(self):
         self.state = 'confirm'
+
+    def action_reject(self):
+        self.state = 'reject'
 
 

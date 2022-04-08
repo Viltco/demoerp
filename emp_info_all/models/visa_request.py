@@ -52,7 +52,7 @@ class VisaRequest(models.Model):
     description = fields.Text(string='Description')
 
     state = fields.Selection(
-        [('submit', 'ToSubmit'), ('waiting_approval', 'Waiting Approval') ,('approved', 'Approved')],
+        [('submit', 'ToSubmit'), ('waiting_approval', 'Waiting Approval') ,('approved', 'Approved'),('reject', 'Rejected')],
         default='submit')
 
     def action_submit(self):
@@ -60,3 +60,6 @@ class VisaRequest(models.Model):
 
     def action_approve(self):
         self.state = 'approved'
+
+    def action_reject(self):
+        self.state = 'reject'

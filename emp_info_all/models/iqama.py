@@ -40,7 +40,7 @@ class IqamaRequest(models.Model):
     description = fields.Text(string='Description')
 
     state = fields.Selection(
-        [('draft', 'Draft'), ('waiting_approval', 'Waiting Approval'), ('approved', 'Approved')],
+        [('draft', 'Draft'), ('waiting_approval', 'Waiting Approval'), ('approved', 'Approved'),('reject', 'Rejected')],
         default='draft')
 
 
@@ -50,4 +50,9 @@ class IqamaRequest(models.Model):
 
     def action_approve(self):
         self.state = 'approved'
+
+    def action_reject(self):
+        self.state = 'reject'
+
+
 

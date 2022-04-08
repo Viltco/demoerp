@@ -26,6 +26,8 @@
                 <header>
                     <button id="button_submit" name="action_submit" string="Submit" type="object"
                             class="btn-primary"/>
+                    <button id="button_reject" name="action_reject" string="Reject" type="object"
+                            class="btn-primary"/>
                     <field name="state" widget="statusbar"
                            statusbar_visible="tosubmit,confirm"/>
                 </header>
