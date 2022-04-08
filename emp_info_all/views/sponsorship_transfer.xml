@@ -19,9 +19,9 @@
             <form>
                 <header>
                     <button id="button_submit" name="action_submit" string="Submit" type="object"
-                            class="btn-primary"/>
+                            class="btn-primary" attrs="{'invisible': [('state', '=', 'waiting_approval')]}"/>
                     <button id="button_approve" name="action_approve" string="Approve" type="object"
-                            class="btn-primary"/>
+                            class="btn-primary" attrs="{'invisible': [('state', '=', 'reject')]}"/>
                     <button id="button_reject" name="action_reject" string="Reject" type="object"
                             class="btn-primary"/>
                     <field name="state" widget="statusbar"

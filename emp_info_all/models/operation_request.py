@@ -7,10 +7,12 @@ class OperationRequest(models.Model):
     _rec_name = 'employee_id'
 
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True)
-    employee_code = fields.Integer(string='Employee Code', readonly="1")
-    employee_ems_code = fields.Integer(string='Employee EMS Code', readonly="1")
-    department = fields.Char(string='Department', readonly="1")
-    job_position = fields.Char(string='Job Position', readonly="1")
+    employee_code = fields.Char(string='Employee Code', related='employee_id.pin')
+    employee_ems_code = fields.Integer(string='Employee Ems Code', readonly="1")
+    department = fields.Many2one('hr.department', related='employee_id.department_id')
+    job_position = fields.Many2one('hr.job', related='employee_id.job_id')
+
+
 
     operation = fields.Selection([
         ('changingprofession', 'Changing Profession'),

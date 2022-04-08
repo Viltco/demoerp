@@ -7,15 +7,16 @@ class RecruiterVisaRequest(models.Model):
     _rec_name = 'employee_id'
 
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True)
-    emp_code = fields.Integer(string='Employee Code', readonly="1")
+
+    emp_code = fields.Char(string='Employee Code', related='employee_id.pin')
     emp_ems_code = fields.Integer(string='Employee Ems Code', readonly="1")
-    emp_department = fields.Char(string='Employee Department', readonly="1")
-    job_position = fields.Char(string='Job Position', readonly="1")
+    emp_department = fields.Many2one('hr.department', related='employee_id.department_id')
+    job_position = fields.Many2one('hr.job', related='employee_id.job_id')
 
     country_id = fields.Many2one(
-        'res.country', 'Nationality (Country)', tracking=True)
-    email = fields.Char(string='Email')
-    passport_no = fields.Integer(string='Passport Number')
+        'res.country', 'Nationality (Country)', tracking=True , related='employee_id.country_id')
+    email = fields.Char(string='Email' ,related='employee_id.work_email')
+    passport_no = fields.Char(string='Passport Number' ,related='employee_id.passport_id')
     fiscal_year = fields.Date(string='Fiscal Year')
     request_by = fields.Many2one('hr.department', string='Request By')
 
