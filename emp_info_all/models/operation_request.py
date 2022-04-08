@@ -32,10 +32,12 @@ class OperationRequest(models.Model):
     client_name = fields.Char(string='Client Name')
     project_name = fields.Char(string='Project Name')
 
-
     state = fields.Selection(
-        [('new', 'New'), ('waiting_approval', 'Waiting For Approval')],
+        [('new', 'New'), ('waiting_approval', 'Waiting For Approval'), ('approved', 'Approved')],
         default='new')
 
     def action_submit(self):
         self.state = 'waiting_approval'
+
+    def action_approve(self):
+        self.state = 'approved'

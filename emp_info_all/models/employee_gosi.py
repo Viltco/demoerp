@@ -3,6 +3,7 @@ from odoo import api, fields, models
 
 class EmployeeGosi(models.Model):
     _name = "employee.gosi"
+    _rec_name = 'employee_id'
 
     employee_id = fields.Many2one('hr.employee', string='Employee')
     emp_arabic_name = fields.Char(string='Employee Arabic Name', readonly="1")
@@ -18,7 +19,7 @@ class EmployeeGosi(models.Model):
     type = fields.Selection([
         ('saudi', 'Saudi'),
         ('other', 'Other'),
-    ],  tracking=True)
+    ], tracking=True)
     family_card_id = fields.Integer(string='Family Card ID')
 
     issue_date = fields.Date(string='Issue Date')
@@ -26,5 +27,4 @@ class EmployeeGosi(models.Model):
     date_birth_hijri = fields.Date(string='Date of Birth(Hijri)')
     gosi_no = fields.Integer(string='Gosi Number')
 
-    gosi_lines_id = fields.One2many('gosi.lines', 'employee_gosi_id')
-
+    gosi_lines_id = fields.One2many('gosi.lines', 'employee_gosi_id', string='Gosi')

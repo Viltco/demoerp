@@ -26,6 +26,8 @@
                 <header>
                     <button id="button_submit" name="action_submit" string="Submit" type="object"
                             class="btn-primary"/>
+                    <button id="button_approve" name="action_approve" string="Approve" type="object"
+                            class="btn-primary"/>
                     <field name="state" widget="statusbar"
                            statusbar_visible="new,waiting_approval"/>
                 </header>

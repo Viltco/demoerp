@@ -25,6 +25,8 @@
                 <header>
                     <button id="button_confirm" name="action_confirm" string="Confirm" type="object"
                             class="btn-primary"/>
+                     <button id="button_approve" name="action_approve" string="Approve" type="object"
+                            class="btn-primary"/>
                     <field name="state" widget="statusbar"
                            statusbar_visible="draft,waiting_approval"/>
                 </header>
@@ -35,7 +37,7 @@
                     </group>
                     <group attrs="{'invisible': [('iqama_type', '!=', 'employee')]}" string="Employee Details">
                         <group>
-                            <field name="employee_id"/>
+                            <field name="employee_id" />
                             <field name="emp_code"/>
                             <field name="emp_ems_code"/>
                             <field name="emp_department"/>

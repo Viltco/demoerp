@@ -14,9 +14,14 @@ class SponsorshipTransfer(models.Model):
 
     description = fields.Text(string='Description')
 
+
     state = fields.Selection(
         [('draft', 'Draft'), ('waiting_approval', 'Waiting Approval'), ('approved', 'Approved')],
         default='draft')
 
     def action_submit(self):
         self.state = 'waiting_approval'
+
+    def action_approve(self):
+        self.state = 'approved'
+

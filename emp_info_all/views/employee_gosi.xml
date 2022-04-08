@@ -45,7 +45,7 @@
                     <notebook>
                         <page string="Payslip">
                             <field name="gosi_lines_id">
-                                <tree>
+                                <tree editable="bottom">
                                     <field name="payslip_id"/>
                                     <field name="date"/>
                                     <field name="gosi_amount"/>

@@ -11,7 +11,7 @@ class IqamaRequest(models.Model):
         ('newbornbaby', 'New Born Baby'),
     ], required=True, tracking=True)
 
-    employee_id = fields.Many2one('hr.employee', string='Employee', required=True)
+    employee_id = fields.Many2one('hr.employee', string='Employee')
     emp_code = fields.Integer(string='Employee Code', readonly="1")
     emp_ems_code = fields.Integer(string='Employee Ems Code', readonly="1")
     emp_department = fields.Char(string='Employee Department', readonly="1")
@@ -40,10 +40,14 @@ class IqamaRequest(models.Model):
     description = fields.Text(string='Description')
 
     state = fields.Selection(
-        [('draft', 'Draft'), ('waiting_approval', 'Waiting Approval')],
+        [('draft', 'Draft'), ('waiting_approval', 'Waiting Approval'), ('approved', 'Approved')],
         default='draft')
 
 
     def action_confirm(self):
         self.state = 'waiting_approval'
+
+
+    def action_approve(self):
+        self.state = 'approved'
 

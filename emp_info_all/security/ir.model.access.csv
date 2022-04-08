@@ -5,3 +5,4 @@ access_visa_request,access.visa.request,model_visa_request,,1,1,1,1
 access_sponsorship_transfer,access.sponsorship.transfer,model_sponsorship_transfer,,1,1,1,1
 access_recruiter_request,access.recruiter.request,model_recruiter_request,,1,1,1,1
 access_employee_gosi,access.employee.gosi,model_employee_gosi,,1,1,1,1
+access_gosi_lines,access.gosi.lines,model_gosi_lines,,1,1,1,1
