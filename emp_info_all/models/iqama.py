@@ -22,14 +22,14 @@ class IqamaRequest(models.Model):
     name_as_passport = fields.Char(string='Name(As in Passport)')
     arabic_name = fields.Char(string='Arabic Name')
     nationality = fields.Many2one(
-        'res.country', 'Nationality', tracking=True , related='employee_id.country_id')
+        'res.country', 'Nationality', tracking=True, related='employee_id.country_id')
     religion = fields.Selection([
         ('muslim', 'Muslim'),
         ('non-muslim', 'Non-Muslim'),
         ('other', 'Other'),
     ], tracking=True)
-    date_of_birth = fields.Date(string='Date of Birth' , related='employee_id.birthday')
-    profession = fields.Char(string='Profession' , related='employee_id.job_title')
+    date_of_birth = fields.Date(string='Date of Birth', related='employee_id.birthday')
+    profession = fields.Char(string='Profession', related='employee_id.job_title')
 
     iqama_number = fields.Integer(string='Iqama Number')
     serial_number = fields.Integer(string='Serial Number')
@@ -42,19 +42,15 @@ class IqamaRequest(models.Model):
     description = fields.Text(string='Description')
 
     state = fields.Selection(
-        [('draft', 'Draft'), ('waiting_approval', 'Waiting Approval'), ('approved', 'Approved'),('reject', 'Rejected')],
+        [('draft', 'Draft'), ('waiting_approval', 'Waiting Approval'), ('approved', 'Approved'),
+         ('reject', 'Rejected')],
         default='draft')
-
 
     def action_confirm(self):
         self.state = 'waiting_approval'
-
 
     def action_approve(self):
         self.state = 'approved'
 
     def action_reject(self):
         self.state = 'reject'
-
-
-
