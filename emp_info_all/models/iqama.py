@@ -10,7 +10,7 @@ class IqamaRequest(models.Model):
         ('employee', 'Employee'),
         ('family', 'Family'),
         ('newbornbaby', 'New Born Baby'),
-    ], required=True, tracking=True)
+    ], required=True, )
 
     employee_id = fields.Many2one('hr.employee', string='Employee')
     emp_code = fields.Char(string='Employee Code', related='employee_id.pin')
@@ -22,12 +22,12 @@ class IqamaRequest(models.Model):
     name_as_passport = fields.Char(string='Name(As in Passport)')
     arabic_name = fields.Char(string='Arabic Name')
     nationality = fields.Many2one(
-        'res.country', 'Nationality', tracking=True, related='employee_id.country_id')
+        'res.country', 'Nationality', related='employee_id.country_id')
     religion = fields.Selection([
         ('muslim', 'Muslim'),
         ('non-muslim', 'Non-Muslim'),
         ('other', 'Other'),
-    ], tracking=True)
+    ])
     date_of_birth = fields.Date(string='Date of Birth', related='employee_id.birthday')
     profession = fields.Char(string='Profession', related='employee_id.job_title')
 

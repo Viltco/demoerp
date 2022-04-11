@@ -13,7 +13,7 @@ class VisaRequest(models.Model):
     job_position = fields.Many2one('hr.job', related='employee_id.job_id')
 
     country_id = fields.Many2one(
-        'res.country', 'Nationality (Country)', tracking=True , related='employee_id.country_id')
+        'res.country', 'Nationality (Country)', related='employee_id.country_id')
     email = fields.Char(string='Email' ,related='employee_id.work_email')
     passport_no = fields.Char(string='Passport Number' ,related='employee_id.passport_id')
     fiscal_year = fields.Date(string='Fiscal Year')
@@ -21,16 +21,16 @@ class VisaRequest(models.Model):
     visa_for = fields.Selection([
         ('individual', 'Individual'),
         ('multiple', 'Multiple'),
-    ], tracking=True)
+    ])
     type = fields.Selection([
         ('single', 'Single'),
         ('married', 'Married'),
-    ],  tracking=True)
+    ])
     type_of_visa = fields.Selection([
         ('exitre-entryvisa', 'Exit Re-Enter Visa'),
         ('finalexit', 'Final Exit'),
         ('extensionofexitre-entryvisa', 'Extension Of Exit Re-Entry Visa'),
-    ], tracking=True)
+    ])
     purpose_of_visa = fields.Selection([
         ('training', 'Training'),
         ('businesstrip', 'Business Trip'),
@@ -39,10 +39,10 @@ class VisaRequest(models.Model):
         ('secondment', 'Secondment'),
         ('emergency', 'Emergency'),
         ('other', 'Other'),
-    ], tracking=True)
+    ])
     dep_date = fields.Date(string='Departure Date')
     country = fields.Many2one(
-        'res.country', 'Country', tracking=True)
+        'res.country', 'Country')
     return_date = fields.Date(string='Return Date')
     visa_no = fields.Integer(string='Visa Number')
     visa_duration = fields.Integer(string='Visa Duration')

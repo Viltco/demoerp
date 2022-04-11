@@ -19,18 +19,18 @@ class OperationRequest(models.Model):
         ('familyvisarequest', 'Family Visa Request'),
         ('lossingiqama', 'Lossing Iqama'),
         ('saudizationcertification', 'Saudization Certification'),
-    ], tracking=True)
+    ])
     expense_needed = fields.Boolean(string='Expense Needed')
     handle_by = fields.Selection([
         ('other', 'Other')
-    ], tracking=True)
+    ])
 
     description = fields.Text(string='Description')
 
     reason_for_saudi_certification = fields.Selection([
         ('getatenderdocument', 'Get a Tender Document'),
         ('other', 'Other'),
-    ], tracking=True)
+    ])
     client_name = fields.Char(string='Client Name')
     project_name = fields.Char(string='Project Name')
 

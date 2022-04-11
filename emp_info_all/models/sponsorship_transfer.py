@@ -11,7 +11,7 @@ class SponsorshipTransfer(models.Model):
     handle_by = fields.Selection([
         ('individual', 'Individual'),
         ('multiple', 'Multiple'),
-    ], tracking=True)
+    ])
 
     description = fields.Text(string='Description')
 

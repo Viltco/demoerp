@@ -14,13 +14,13 @@ class EmployeeGosi(models.Model):
     job_position = fields.Many2one('hr.job', related='employee_id.job_id')
 
     country_id = fields.Many2one(
-        'res.country', 'Nationality (Country)', tracking=True, related='employee_id.country_id')
+        'res.country', 'Nationality (Country)', related='employee_id.country_id')
     passport_no = fields.Char(string='Passport Number' ,related='employee_id.passport_id')
 
     type = fields.Selection([
         ('saudi', 'Saudi'),
         ('other', 'Other'),
-    ], tracking=True)
+    ])
     family_card_id = fields.Integer(string='Family Card ID')
 
     issue_date = fields.Date(string='Issue Date')
