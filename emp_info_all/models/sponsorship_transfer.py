@@ -3,6 +3,7 @@ from odoo import api, fields, models
 
 class SponsorshipTransfer(models.Model):
     _name = "sponsorship.transfer"
+    _description = "Sponsorship Transfer"
     _rec_name = 'employee_id'
 
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True)

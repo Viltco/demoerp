@@ -3,6 +3,7 @@ from odoo import api, fields, models
 
 class IqamaRequest(models.Model):
     _name = "iqama.request"
+    _description = "Iqama Request"
     _rec_name = 'iqama_type'
 
     iqama_type = fields.Selection([

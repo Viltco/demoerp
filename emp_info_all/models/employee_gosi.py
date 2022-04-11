@@ -3,6 +3,7 @@ from odoo import api, fields, models
 
 class EmployeeGosi(models.Model):
     _name = "employee.gosi"
+    _description = "Employee Gosi"
     _rec_name = 'employee_id'
 
     employee_id = fields.Many2one('hr.employee', string='Employee')

@@ -3,7 +3,7 @@ from odoo import api, fields, models
 
 class OperationRequest(models.Model):
     _name = "operation.request"
-    # _inherit = 'res.users'
+    _description = "Operation Request"
     _rec_name = 'employee_id'
 
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True)

@@ -3,7 +3,7 @@ from odoo import api, fields, models
 
 class RecruiterVisaRequest(models.Model):
     _name = "recruiter.request"
-    # _inherit = 'res.users'
+    _description = "Recruiter Request"
     _rec_name = 'employee_id'
 
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True)
